@@ -11,7 +11,7 @@ inputs:
     required: true
 
 runs:
-  using: node15
+  using: node12
   main: index.js
 
 branding:
