@@ -45,7 +45,8 @@ async function main() {
 		const octokit = getOctokit();
 		let assignees = core.getInput( 'assignees', { required: true });
 		assignees = assignees.split( ',' );
-		assignees.forEach( ( name ) => {
+		for ( let i = 0; i < assignees.length; i++ ) {
+			const name = assignees[ i ];
 			name = name.trim();
 			if ( context.payload.label.name == name ) {
 				await octokit.issues.addAssignees({
@@ -55,7 +56,7 @@ async function main() {
 					assignees: name
 				});
 			}
-		});
+		}
 	} catch ( e ) {
 		core.error( e );
 		core.setFailed( e.message );
