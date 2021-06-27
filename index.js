@@ -43,17 +43,18 @@ async function main() {
 		}
 		const [ owner, repo ] = repository.full_name.split( '/' );
 		const octokit = getOctokit();
-		let assignees = core.getInput( 'assignees', { required: true });
-		assignees = assignees.split( ',' );
-		for ( let i = 0; i < assignees.length; i++ ) {
-			let name = assignees[ i ];
-			name = name.trim();
-			if ( context.payload.label.name == name ) {
+		let assignment = core.getInput( 'assignment', { required: true });
+		assignment = assignment.split( ',' );
+		for ( let i = 0; i < assignment.length; i++ ) {
+			let [ label, user ] = assignment[ i ].split( '|' );
+			label = label.trim();
+			user = user.trim();
+			if ( context.payload.label.name == label ) {
 				await octokit.rest.issues.addAssignees({
 					owner,
 					repo,
 					issue_number: issue.number,
-					assignees: name
+					assignees: user
 				});
 			}
 		}

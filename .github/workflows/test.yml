@@ -15,4 +15,4 @@ jobs:
       - uses: ./
         with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          assignees: Planeshifter,kgryte
+          assignment: philipp | Planeshifter, athan | kgryte
