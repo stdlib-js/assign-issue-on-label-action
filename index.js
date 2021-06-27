@@ -49,7 +49,7 @@ async function main() {
 			let name = assignees[ i ];
 			name = name.trim();
 			if ( context.payload.label.name == name ) {
-				await octokit.issues.addAssignees({
+				await octokit.rest.issues.addAssignees({
 					owner,
 					repo,
 					issue_number: issue.number,
