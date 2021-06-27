@@ -1,0 +1,18 @@
+name: Test GitHub Action
+
+on:
+  issues:
+    types: [labeled]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Install dependencies
+        run: |
+          npm install
+      - uses: ./
+        with:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          assignees: Planeshifter,kgryte

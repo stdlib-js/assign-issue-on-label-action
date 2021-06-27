@@ -1,0 +1,19 @@
+name: Assign to Issue Based on Label
+description: Automatically assign users to issues based on labels
+author: Philipp Burckhardt <pburckhardt@outlook.com>
+
+inputs:
+  GITHUB_TOKEN:
+    description: Your GitHub token for authentication
+    required: true
+  assignees:
+    description: Comma-separated list of users to assign to issues based on respective labels
+    required: true
+
+runs:
+  using: node15
+  main: index.js
+
+branding:
+  icon: send
+  color: green
