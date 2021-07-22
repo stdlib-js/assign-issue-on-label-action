@@ -15,5 +15,5 @@ runs:
   main: index.js
 
 branding:
-  icon: send
+  icon: tag
   color: green
