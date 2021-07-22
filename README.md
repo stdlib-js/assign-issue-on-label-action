@@ -18,13 +18,9 @@ limitations under the License.
 
 -->
 
----
-
 # Assign Issue On Label Action
 
 > A GitHub action to automatically assign users to issues based on issue labels.
-
----
 
 ## Example Workflow
 
