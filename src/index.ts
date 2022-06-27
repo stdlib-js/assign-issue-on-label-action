@@ -24,6 +24,11 @@ import { context, getOctokit } from '@actions/github';
 
 // FUNCTIONS //
 
+/**
+* Returns a hydrated octokit ready to use for GitHub Actions.
+* 
+* @returns {Object} GitHub API client
+*/
 function octokit() {
 	const token = getInput( 'GITHUB_TOKEN', { 
 		required: true 
@@ -34,7 +39,10 @@ function octokit() {
 
 // MAIN //
 
-async function main() {
+/**
+* Main function.
+*/
+async function main(): Promise<void> {
 	try {
 		const { repository, issue } = context.payload;
 		if ( !issue ) {
