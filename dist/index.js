@@ -21,6 +21,11 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const core_1 = require("@actions/core");
 const github_1 = require("@actions/github");
 // FUNCTIONS //
+/**
+* Returns a hydrated octokit ready to use for GitHub Actions.
+*
+* @returns {Object} GitHub API client
+*/
 function octokit() {
     const token = (0, core_1.getInput)('GITHUB_TOKEN', {
         required: true
@@ -28,6 +33,9 @@ function octokit() {
     return (0, github_1.getOctokit)(token);
 }
 // MAIN //
+/**
+* Main function.
+*/
 async function main() {
     try {
         const { repository, issue } = github_1.context.payload;
