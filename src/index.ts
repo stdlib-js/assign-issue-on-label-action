@@ -27,7 +27,7 @@ import { context, getOctokit } from '@actions/github';
 /**
 * Returns a hydrated octokit ready to use for GitHub Actions.
 * 
-* @returns {Object} GitHub API client
+* @returns GitHub API client
 */
 function octokit() {
 	const token = getInput( 'GITHUB_TOKEN', { 

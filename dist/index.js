@@ -24,7 +24,7 @@ const github_1 = require("@actions/github");
 /**
 * Returns a hydrated octokit ready to use for GitHub Actions.
 *
-* @returns {Object} GitHub API client
+* @returns GitHub API client
 */
 function octokit() {
     const token = (0, core_1.getInput)('GITHUB_TOKEN', {
