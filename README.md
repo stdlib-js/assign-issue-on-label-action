@@ -42,7 +42,7 @@ jobs:
     # Define the sequence of job steps...
     steps:
       # Assign issues to users based on specified `<label> | <username>` pairs:
-      - uses: stdlib-js/assign-issue-on-label-action@v1.0
+      - uses: stdlib-js/assign-issue-on-label-action@v2
         with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           assignment: philipp | Planeshifter, athan | kgryte

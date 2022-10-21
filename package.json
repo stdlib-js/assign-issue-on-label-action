@@ -1,6 +1,6 @@
 {
     "name": "assign-issue-on-label-action",
-    "version": "1.0.1",
+    "version": "2.0.0",
     "description": "Automatically assign users to issues based on labels.",
     "main": "dist/index.js",
     "scripts": {
